@@ -705,6 +705,9 @@ video {
 .max-h-screen {
   max-height: 100vh;
 }
+.min-h-\[50vh\] {
+  min-height: 50vh;
+}
 .w-24 {
   width: 6rem;
 }
@@ -734,6 +737,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.min-w-\[50vw\] {
+  min-width: 50vw;
 }
 .max-w-2xl {
   max-width: 42rem;
@@ -1324,10 +1330,6 @@ video {
 :is(.dark .dark\:bg-ternary-dark) {
   --tw-bg-opacity: 1;
   background-color: rgb(30 56 81 / var(--tw-bg-opacity));
-}
-:is(.dark .dark\:bg-slate-800) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 :is(.dark .dark\:font-medium) {
   font-weight: 500;

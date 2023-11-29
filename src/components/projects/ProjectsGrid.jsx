@@ -16,7 +16,7 @@ const ProjectsGrid = () => {
 		selectProjectsByCategory,
 		loading,
 	} = useContext(ProjectsContext);
-	console.log(loading, projects);
+	// console.log(loading, projects);
 	return (
 		<section className='py-5 sm:py-10 mt-5 sm:mt-10'>
 			<div className='text-center'>
@@ -103,6 +103,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.images[0]}
 								key={project._id}
+								loading={loading}
 							/>
 					  ))
 					: searchProject
@@ -112,6 +113,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.images[0]}
 								key={project._id}
+								loading={loading}
 							/>
 					  ))
 					: projects.map((project) => (
@@ -120,6 +122,7 @@ const ProjectsGrid = () => {
 								category={project.category}
 								image={project.images[0]}
 								key={project._id}
+								loading={loading}
 							/>
 					  ))}
 			</div>
