@@ -197,11 +197,12 @@ const CreateProject = () => {
 								>
 									Select category
 								</option>
-								<option value='webApp'>Web Application</option>
-								<option value='mobileApp'>Mobile App</option>
-								<option value='backend'>{`Backend (NODE.js)`}</option>
-								<option value='ui-ux'>UI/UX</option>
-								<option value='branding'>Branding</option>
+								<option value='Web Application'>Web Application</option>
+								<option value='Mobile Application'>Mobile App</option>
+								<option value='Backend (NODE.js)'>{`Backend (NODE.js)`}</option>
+								<option value='UI/UX'>UI/UX</option>
+								<option value='Branding'>Branding</option>
+								<option value='Other'>Other</option>
 							</select>
 							<span className='absolute top-1/2 right-4 z-30 -translate-y-1/2'>
 								{/* 🔽 */}
