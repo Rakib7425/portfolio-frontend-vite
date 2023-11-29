@@ -248,7 +248,7 @@ const CreateProject = () => {
 						className='flex w-full bg-blue-600 hover:bg-blue-500 duration-200 justify-center rounded bg-primary p-3 font-medium text-gray  text-white'
 						onClick={handleClick}
 					>
-						Upload Post
+						Create Now
 					</button>
 				</div>
 			</form>

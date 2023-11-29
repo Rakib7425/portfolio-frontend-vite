@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { reuseInputClassnames } from "../../constants/adminConstants";
-import Button from "../reusable/Button";
 import { contactMeApiUrl } from "../../apis/APIs";
 import { toast } from "react-toastify";
+import { Button } from "antd";
 
 const ContactForm = () => {
+	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState({
 		fullName: "",
 		email: "",
@@ -18,7 +19,7 @@ const ContactForm = () => {
 		if (!(fullName && email && subject && message)) {
 			return toast.warn(`All fields are required!`);
 		}
-
+		setIsLoading(true);
 		let headersList = {
 			"Content-Type": "application/json",
 		};
@@ -39,14 +40,16 @@ const ContactForm = () => {
 		let data = await response.json();
 		if (data.success) {
 			toast.success(data.message);
-
+			setIsLoading(false);
 			setFormData({
 				fullName: "",
 				email: "",
 				subject: "",
 				message: "",
 			});
+			return;
 		}
+		setIsLoading(false);
 	};
 
 	return (
@@ -144,10 +147,15 @@ const ContactForm = () => {
 						></textarea>
 					</div>
 
-					<div className='font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500'>
-						<div className='sendMessage' onClick={handleSubmitForm}>
-							<Button title='Send Message' type='submit' aria-label='Send Message' />
-						</div>
+					<div className=''>
+						<Button
+							type='primary'
+							loading={isLoading}
+							onClick={handleSubmitForm}
+							className='font-general-medium w-40 px-4  text-white bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500 py-6 flex items-center justify-center text-lg'
+						>
+							Submit
+						</Button>
 					</div>
 				</form>
 			</div>

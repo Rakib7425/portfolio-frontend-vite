@@ -82,7 +82,7 @@ const AdminLogin = () => {
 							</label>
 							<input
 								required
-								type='text'
+								type='password'
 								placeholder='Password *'
 								className={reuseInputClassnames}
 								value={formData.password}

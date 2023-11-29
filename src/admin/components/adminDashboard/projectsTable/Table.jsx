@@ -83,14 +83,14 @@ const Table = () => {
 									<div className='flex justify-center items-center gap-2'>
 										<button
 											type='button'
-											className={`py-[5px] px-5 mt-2 rounded-md ${
+											className={`py-[5px] px-5 mt-2 rounded-md  ${
 												!isModalOpen
-													? "bg-blue-600 hover:bg-blue-700 duration-200"
+													? "bg-blue-600 hover:text-gray-950 hover:bg-blue-700 duration-200"
 													: "bg-red-500"
 											} `}
 											onClick={() => handleEditClick(data[index])}
 										>
-											<span className='text-white'>Edit</span>
+											Edit
 										</button>
 
 										<Popconfirm
@@ -104,7 +104,7 @@ const Table = () => {
 												className: "bg-blue-600 hover:bg-blue-800",
 											}}
 										>
-											<Button danger className=' mt-2'>
+											<Button danger className=' mt-2 hover:text-white'>
 												Delete
 											</Button>
 										</Popconfirm>
