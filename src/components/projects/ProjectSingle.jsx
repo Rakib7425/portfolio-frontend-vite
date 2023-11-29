@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ShimmerEffect from "../../admin/components/loader/ShimmerEffect";
 
-const ProjectSingle = ({ title, category, image, loading }) => {
+const ProjectSingle = ({ id, title, category, image, loading }) => {
 	return loading ? (
 		<div className='min-h-[50vh] min-w-[50vw]'>
 			<ShimmerEffect />
@@ -18,7 +18,7 @@ const ProjectSingle = ({ title, category, image, loading }) => {
 				delay: 0.15,
 			}}
 		>
-			<Link to='/projects/single-project' aria-label='Single Project'>
+			<Link to={`/project/${id}`} aria-label='Single Project'>
 				<div className='rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark'>
 					<div>
 						<img
