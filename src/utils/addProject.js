@@ -18,7 +18,7 @@ export const addProject = async (formDataLocal, imagesLocal, setFormData, setIma
 		bodyContent.append("title", formDataLocal.title);
 		bodyContent.append("hostedLink", formDataLocal.hostedLink);
 		bodyContent.append("gitHubLink", formDataLocal.gitHubLink);
-		bodyContent.append("subject", formDataLocal.subject);
+		bodyContent.append("category", formDataLocal.category);
 		bodyContent.append("description", formDataLocal.description);
 		bodyContent.append("challenges", formDataLocal.challenges);
 		bodyContent.append("technologies", formDataLocal.technologies);
@@ -45,7 +45,7 @@ export const addProject = async (formDataLocal, imagesLocal, setFormData, setIma
 				title: "",
 				hostedLink: "",
 				gitHubLink: "",
-				subject: "",
+				category: "",
 				description: "",
 				challenges: "",
 				technologies: "",

@@ -8,7 +8,7 @@ const CreateProject = () => {
 		title: "",
 		hostedLink: "",
 		gitHubLink: "",
-		subject: "",
+		category: "",
 		description: "",
 		challenges: "",
 		technologies: "",
@@ -27,7 +27,7 @@ const CreateProject = () => {
 
 	//
 	const handleClick = () => {
-		const { title, hostedLink, gitHubLink, subject, description, challenges, technologies } =
+		const { title, hostedLink, gitHubLink, category, description, challenges, technologies } =
 			formData;
 
 		if (
@@ -35,7 +35,7 @@ const CreateProject = () => {
 				title &&
 				hostedLink &&
 				gitHubLink &&
-				subject &&
+				category &&
 				description &&
 				challenges &&
 				technologies
@@ -176,17 +176,17 @@ const CreateProject = () => {
 
 					<div className='my-4.5'>
 						<label className='my-2.5 block text-black dark:text-white'>
-							Subject *<span className='text-meta-1'>*</span>
+							category *<span className='text-meta-1'>*</span>
 						</label>
 						<div className='relative z-20 bg-transparent dark:bg-form-input'>
 							<select
 								// defaultValue='UI/UX'
 								className={`${reuseClassnames}`}
-								value={formData.subject}
+								value={formData.category}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
 										...prevFormData,
-										subject: e.target.value,
+										category: e.target.value,
 									}));
 								}}
 							>
@@ -195,7 +195,7 @@ const CreateProject = () => {
 									className='opacity-50'
 									style={{ cursor: "not-allowed", opacity: "20%" }}
 								>
-									Select Subject
+									Select category
 								</option>
 								<option value='webApp'>Web Application</option>
 								<option value='mobileApp'>Mobile App</option>

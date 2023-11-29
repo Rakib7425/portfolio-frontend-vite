@@ -26,7 +26,7 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 		title: editingItem.title,
 		hostedLink: editingItem.hostedLink,
 		gitHubLink: editingItem.gitHubLink,
-		subject: editingItem.subject,
+		category: editingItem.category,
 		description: editingItem.description,
 		challenges: editingItem.challenges,
 		technologies: editingItem.technologies,
@@ -196,16 +196,16 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 
 						<div className='my-4.5'>
 							<label className='my-2.5 block text-black '>
-								Subject<span className='text-meta-1'>*</span>
+								category<span className='text-meta-1'>*</span>
 							</label>
 							<div className='relative z-20 bg-transparent dark:bg-form-input'>
 								<select
 									className={`${reuseClassnames}`}
-									value={formData.subject}
+									value={formData.category}
 									onChange={(e) => {
 										setFormData((prevFormData) => ({
 											...prevFormData,
-											subject: e.target.value,
+											category: e.target.value,
 										}));
 									}}
 								>

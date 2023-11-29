@@ -1,7 +1,7 @@
-import { useState, createContext } from 'react';
-import { aboutMeData } from '../data/aboutMeData';
-import { clientsHeading as clientsPageHeading } from '../data/clientsData';
-import { clientsData as clientsDataJson } from '../data/clientsData';
+import { useState, createContext } from "react";
+import { clientsHeading as clientsPageHeading } from "../data/clientsData";
+import { clientsData as clientsDataJson } from "../data/clientsData";
+import { aboutMeData } from "../utils/aboutMeData";
 
 const AboutMeContext = createContext();
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 import ProjectSingle from "./ProjectSingle";
@@ -13,8 +14,9 @@ const ProjectsGrid = () => {
 		selectProject,
 		setSelectProject,
 		selectProjectsByCategory,
+		loading,
 	} = useContext(ProjectsContext);
-
+	console.log(loading, projects);
 	return (
 		<section className='py-5 sm:py-10 mt-5 sm:mt-10'>
 			<div className='text-center'>
@@ -100,7 +102,7 @@ const ProjectsGrid = () => {
 								title={project.title}
 								category={project.category}
 								image={project.img}
-								key={project.id}
+								key={project._id}
 							/>
 					  ))
 					: searchProject
@@ -109,7 +111,7 @@ const ProjectsGrid = () => {
 								title={project.title}
 								category={project.category}
 								image={project.img}
-								key={project.id}
+								key={project._id}
 							/>
 					  ))
 					: projects.map((project) => (
@@ -117,7 +119,7 @@ const ProjectsGrid = () => {
 								title={project.title}
 								category={project.category}
 								image={project.img}
-								key={project.id}
+								key={project._id}
 							/>
 					  ))}
 			</div>
