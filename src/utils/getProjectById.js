@@ -5,7 +5,7 @@ export const getProjectById = async (projectId, setLoading) => {
 		setLoading(true);
 		let headersList = {};
 
-		let response = await fetch(`${getProjectByIdApiUrl}${projectId}`, {
+		let response = await fetch(`${getProjectByIdApiUrl}/${projectId}`, {
 			method: "GET",
 			headers: headersList,
 		});

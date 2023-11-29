@@ -20,7 +20,7 @@ const ProjectInfo = () => {
 						<li className='font-general-regular text-ternary-dark dark:text-ternary-light'>
 							<span>{`Live Link`}: </span>
 							<a
-								href={singleProjectData.hostedLink}
+								href={singleProjectData?.hostedLink}
 								className={
 									"hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 first-letter:cursor-pointer duration-300"
 								}
@@ -31,12 +31,12 @@ const ProjectInfo = () => {
 						<li className='font-general-regular text-ternary-dark dark:text-ternary-light'>
 							<span>{`GitHub Link`}: </span>
 							<a
-								href={singleProjectData.gitHubLink}
+								href={singleProjectData?.gitHubLink}
 								className={
 									"hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 first-letter:cursor-pointer duration-300"
 								}
 							>
-								{singleProjectData.hostedLink}
+								{singleProjectData?.gitHubLink}
 							</a>
 						</li>
 					</ul>
