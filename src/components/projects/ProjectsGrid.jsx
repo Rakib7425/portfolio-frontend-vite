@@ -101,7 +101,7 @@ const ProjectsGrid = () => {
 							<ProjectSingle
 								title={project.title}
 								category={project.category}
-								image={project.img}
+								image={project.images[0]}
 								key={project._id}
 							/>
 					  ))
@@ -110,7 +110,7 @@ const ProjectsGrid = () => {
 							<ProjectSingle
 								title={project.title}
 								category={project.category}
-								image={project.img}
+								image={project.images[0]}
 								key={project._id}
 							/>
 					  ))
@@ -118,7 +118,7 @@ const ProjectsGrid = () => {
 							<ProjectSingle
 								title={project.title}
 								category={project.category}
-								image={project.img}
+								image={project.images[0]}
 								key={project._id}
 							/>
 					  ))}
