@@ -1,0 +1,108 @@
+/*== 
+ * React & TailwindCSS Portfolio Main CSS File
+ * Powered by: @realRakibul
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,100&family=Roboto:wght@300;400&display=swap");
+
+body {
+	font-family: "Poppins", sans-serif;
+}
+body::-webkit-scrollbar {
+	width: 0.21em;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(7, 7, 245, 0.514);
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgb(112, 25, 122);
+	background: -moz-linear-gradient(
+		205deg,
+		rgba(112, 25, 122, 1) 0%,
+		rgba(5, 76, 197, 1) 20%,
+		rgba(145, 2, 210, 1) 37%,
+		rgba(105, 81, 178, 1) 44%,
+		rgba(70, 148, 151, 1) 59%,
+		rgba(145, 2, 210, 1) 79%,
+		rgba(0, 212, 255, 1) 98%
+	);
+	background: -webkit-linear-gradient(
+		205deg,
+		rgba(112, 25, 122, 1) 0%,
+		rgba(5, 76, 197, 1) 20%,
+		rgba(145, 2, 210, 1) 37%,
+		rgba(105, 81, 178, 1) 44%,
+		rgba(70, 148, 151, 1) 59%,
+		rgba(145, 2, 210, 1) 79%,
+		rgba(0, 212, 255, 1) 98%
+	);
+	background: linear-gradient(
+		205deg,
+		rgba(112, 25, 122, 1) 0%,
+		rgba(5, 76, 197, 1) 20%,
+		rgba(145, 2, 210, 1) 37%,
+		rgba(105, 81, 178, 1) 44%,
+		rgba(70, 148, 151, 1) 59%,
+		rgba(145, 2, 210, 1) 79%,
+		rgba(0, 212, 255, 1) 98%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70197a",endColorstr="#00d4ff",GradientType=1);
+}
+
+.font-general-medium {
+	font-family: "Roboto", sans-serif;
+}
+
+.font-general-medium-italic {
+	font-family: "Roboto", sans-serif;
+}
+
+.font-general-semibold-italic {
+	font-family: "Roboto", sans-serif;
+}
+
+.font-general-bold {
+	font-family: "Roboto", sans-serif;
+}
+
+.font-general-bold-italic {
+	font-family: "Roboto", sans-serif;
+}
+
+/* Scroll to top style */
+.scrollToTop {
+	@apply bg-indigo-600;
+	@apply text-white;
+	position: fixed;
+	width: 100%;
+	align-items: center;
+	height: 20px;
+	justify-content: center;
+	z-index: 999;
+	cursor: pointer;
+	animation: fadeIn 0.3s;
+	transition: opacity 0.4s;
+	opacity: 0.9;
+}
+
+.scrollToTop:hover {
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+.ant-modal {
+	margin: 0 auto;
+}
+.ant-modal-content {
+	width: 50vw;
+	margin: 0 auto;
+}
