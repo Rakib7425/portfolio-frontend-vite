@@ -66,7 +66,7 @@ const Table = () => {
 			<table className='w-full dark:text-white text-center border-collapse'>
 				<thead className='py-4 mb-2 border-b-2'>
 					<tr className='py-2'>
-						<th>Sl.</th>
+						<th>Sl.No.</th>
 						<th>Project Name</th>
 						<th>Technologies</th>
 						<th>Actions</th>
@@ -83,7 +83,7 @@ const Table = () => {
 									<div className='flex justify-center items-center gap-2'>
 										<button
 											type='button'
-											className={`py-2 mt-2 px-[10px] rounded-md ${
+											className={`py-[5px] px-5 mt-2 rounded-md ${
 												!isModalOpen
 													? "bg-blue-600 hover:bg-blue-700 duration-200"
 													: "bg-red-500"
@@ -95,7 +95,7 @@ const Table = () => {
 
 										<Popconfirm
 											title='Delete the Project'
-											description='Are you sure to delete this task?'
+											description='Are you sure to delete this project?'
 											onConfirm={() => confirmDelete(item?._id)}
 											okText='Yes'
 											placement='bottom'
@@ -104,7 +104,9 @@ const Table = () => {
 												className: "bg-blue-600 hover:bg-blue-800",
 											}}
 										>
-											<Button danger>Delete</Button>
+											<Button danger className=' mt-2'>
+												Delete
+											</Button>
 										</Popconfirm>
 									</div>
 								</td>
