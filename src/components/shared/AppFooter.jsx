@@ -1,10 +1,4 @@
-import {
-	FiGithub,
-	FiTwitter,
-	FiLinkedin,
-	// FiGlobe,
-	FiYoutube,
-} from "react-icons/fi";
+import { FiGithub, FiTwitter, FiLinkedin, FiYoutube } from "react-icons/fi";
 import AppFooterCopyright from "./AppFooterCopyright";
 import { Link } from "react-router-dom";
 
@@ -22,7 +16,7 @@ const socialLinks = [
 	{
 		id: 4,
 		icon: <FiLinkedin />,
-		url: "https://www.linkedin.com/in/",
+		url: "https://www.linkedin.com/in/rakibul-islam-969106259/",
 	},
 	{
 		id: 5,
@@ -43,7 +37,7 @@ const AppFooter = () => {
 					<ul className='flex gap-4 sm:gap-8'>
 						{socialLinks.map((link) => (
 							<Link
-								href={link.url}
+								to={link.url}
 								target='__blank'
 								key={link.id}
 								className='relative group text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-300 hover:shadow-2xl overflow-hidden'

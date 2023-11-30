@@ -48,7 +48,7 @@ const ProjectInfo = () => {
 				{/* Single project objectives */}
 				<div className='mb-7'>
 					<p className='font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2'>
-						Description
+						Overview
 					</p>
 					<p className='font-general-regular text-primary-dark dark:text-ternary-light'>
 						{singleProjectData.description}
@@ -86,6 +86,15 @@ const ProjectInfo = () => {
 
 			{/*  Single project right section */}
 			<div className='w-full sm:w-2/3 text-left mt-10 sm:mt-0'>
+				{/* Single project objectives */}
+				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7'>
+					Description
+				</p>
+
+				<p className='font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light'>
+					{singleProjectData.description}
+				</p>
+
 				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7'>
 					Challenges
 				</p>
