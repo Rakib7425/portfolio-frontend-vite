@@ -19,7 +19,7 @@ const ProjectSingleHeader = () => {
 				<div className='flex items-center'>
 					<FiTag className='text-lg text-ternary-dark dark:text-ternary-light' />
 					<span className='font-general-regular ml-2 leading-none text-primary-dark dark:text-primary-light'>
-						{singleProjectData[0]?.technologies}
+						{singleProjectData[0]?.category}
 					</span>
 				</div>
 			</div>
