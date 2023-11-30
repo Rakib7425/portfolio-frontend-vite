@@ -1,6 +1,6 @@
 import { updateProjectApiUrl } from "../apis/APIs";
 
-const updateProject = async (projectId, formDataLocal, imagesLocal, setFormData, setImages) => {
+const updateProject = async (projectId, formDataLocal, localImages) => {
 	try {
 		let headersList = {};
 
@@ -14,9 +14,11 @@ const updateProject = async (projectId, formDataLocal, imagesLocal, setFormData,
 		bodyContent.append("challenges", formDataLocal.challenges);
 		bodyContent.append("technologies", formDataLocal.technologies);
 
-		imagesLocal.forEach((img) => {
-			bodyContent.append(`images`, img);
-		});
+		if (localImages) {
+			localImages.forEach((img) => {
+				bodyContent.append(`images`, img);
+			});
+		}
 
 		let response = await fetch(`${updateProjectApiUrl}${projectId}`, {
 			method: "PATCH",
@@ -25,7 +27,7 @@ const updateProject = async (projectId, formDataLocal, imagesLocal, setFormData,
 		});
 
 		let data = await response.json();
-		console.log(data);
+		// console.log(data);
 
 		if (data.success) {
 			return data;

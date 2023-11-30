@@ -1,26 +1,15 @@
 /* eslint-disable react/prop-types */
 import { toggleModalTo } from "../../../../store/configSlice";
-import { useState } from "react";
-import { Form, Modal } from "antd";
+import { useEffect, useState } from "react";
+import { Form, Image, Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { reuseInputClassnamesModal as reuseClassnames } from "../../../../constants/adminConstants";
+import { updateProject } from "../../../../utils/updateProject";
 
 const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 	// const [loading, setLoading] = useState(false);
 	// const [warning, setWarning] = useState("");
-
-	const isOpen = useSelector((store) => store.config.isEditModalOpen);
-	const dispatch = useDispatch();
-
-	const handleCancel = () => {
-		dispatch(toggleModalTo(false));
-		// setNeedReRender(!needReRender);
-	};
-
-	const onFinishFailed = (errorInfo) => {
-		console.log("Failed:", errorInfo);
-	};
 
 	const [formData, setFormData] = useState({
 		title: editingItem.title,
@@ -33,21 +22,59 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 	});
 
 	const [images, setImages] = useState([]);
+	const [localImages, setLocalImages] = useState([]);
+
+	const isOpen = useSelector((store) => store.config.isEditModalOpen);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		const fetchImages = async () => {
+			const imagePromises = editingItem.images.map(async (item) => {
+				let data = await fetch(item);
+				return await data.blob();
+			});
+
+			// Wait for all imagePromises to resolve
+			const imageBlobs = await Promise.all(imagePromises);
+
+			// Set the images state with the resolved blobs
+			setImages(imageBlobs);
+		};
+
+		fetchImages();
+	}, [editingItem]);
+
+	const handleCancel = () => {
+		dispatch(toggleModalTo(false));
+		setLocalImages(images);
+	};
+
+	const onFinishFailed = (errorInfo) => {
+		console.log("Failed:", errorInfo);
+	};
 
 	const handleImageChange = (e) => {
 		const selectedFiles = e.target.files;
 
-		if (selectedFiles.length + images.length <= 3) {
-			setImages((prevImages) => [...prevImages, ...selectedFiles]);
+		if (selectedFiles.length + localImages.length <= 3) {
+			setImages([]);
+			setLocalImages((prevImages) => [...prevImages, ...selectedFiles]);
 		} else {
 			toast.warn("Maximum of 3 images allowed!");
 		}
 	};
 
 	//
-	const handleClick = () => {
-		console.log(formData);
-		setNeedReRender(!needReRender);
+	const handleClick = async () => {
+		// console.log(localImages);
+
+		const dbResponse = await updateProject(editingItem._id, formData, localImages);
+		// console.log(dbResponse);
+		if (dbResponse.success) {
+			setNeedReRender(!needReRender);
+			dispatch(toggleModalTo(false));
+			toast.success(`Successfully updated!`);
+		}
 	};
 
 	return (
@@ -70,15 +97,6 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 					onFinishFailed={onFinishFailed}
 					autoComplete='on'
 				>
-					{/* <form
-						onSubmit={(e) => {
-							e.preventDefault();
-							console.log(e.currentTarget.value);
-						}}
-						action=''
-						method='post'
-						id='projectFromData'
-					> */}
 					<div className='p-6.5'>
 						<div className='my-4.5'>
 							<label className='my-2.5 block text-black '>Title *</label>
@@ -156,7 +174,6 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 								Images &nbsp;<span> (CTRL+click to select multiple files)</span>
 							</label>
 							<input
-								required
 								accept='image/*'
 								multiple
 								max={3}
@@ -166,31 +183,46 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 								className={reuseClassnames}
 								onChange={handleImageChange}
 							/>
-							<div className='flex' style={{ minHeight: "100px" }}>
-								{images &&
-									images.map((image, index) => (
-										<div
-											className='flex justify-center items-center'
-											key={index}
-										>
-											<img
-												style={{
-													marginTop: "10px",
-													maxHeight: "100px",
-													margin: "5px",
-													textAlign: "center",
-												}}
-												src={URL.createObjectURL(image)}
-												alt={`${index}`}
-												className='mx-3'
-											/>
-										</div>
-									))}
-								{images.length < 1 && (
-									<h2 className='flex justify-center items-center  text-2xl'>
-										Image will Preview Here (select Image)
-									</h2>
-								)}
+							<div className='flex gap-2' style={{ minHeight: "100px" }}>
+								{images && localImages.length < 1
+									? images.map((image, index) => (
+											<div
+												className='flex justify-center items-center'
+												key={index}
+											>
+												<Image
+													style={{
+														marginTop: "10px",
+														maxHeight: "100px",
+														margin: "5px",
+														textAlign: "center",
+													}}
+													src={URL.createObjectURL(image)}
+													alt={`${index}`}
+													className='mx-3'
+												/>
+											</div>
+											// eslint-disable-next-line no-mixed-spaces-and-tabs
+									  ))
+									: localImages.map((image, index) => (
+											<div
+												className='flex justify-center items-center'
+												key={index}
+											>
+												<Image
+													style={{
+														marginTop: "10px",
+														maxHeight: "100px",
+														margin: "5px",
+														textAlign: "center",
+													}}
+													src={URL.createObjectURL(image)}
+													alt={`${index}`}
+													className='mx-3'
+												/>
+											</div>
+											// eslint-disable-next-line no-mixed-spaces-and-tabs
+									  ))}
 							</div>
 						</div>
 
@@ -264,7 +296,6 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 							Upload Post
 						</button>
 					</div>
-					{/* </form> */}
 				</Form>
 				{/* 
 				{warning && (

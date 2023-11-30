@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { setSingleProject } from "../store/singleProjectSlice.js";
 import ShimmerEffect from "../admin/components/loader/ShimmerEffect.jsx";
 import ProjectInfo from "../components/projects/ProjectInfo.jsx";
+import ProjectRelatedProjects from "../components/projects/ProjectRelatedProjects.jsx";
 
 const ProjectSingle = () => {
 	const [loading, setLoading] = useState(false);
@@ -36,8 +37,7 @@ const ProjectSingle = () => {
 			{loading ? <ShimmerEffect /> : <ProjectHeader />}
 			{loading ? <ShimmerEffect /> : <ProjectGallery />}
 			{loading ? <ShimmerEffect /> : <ProjectInfo />}
-
-			{/* <ProjectRelatedProjects /> */}
+			{loading ? <ShimmerEffect /> : <ProjectRelatedProjects />}
 		</motion.div>
 	);
 };

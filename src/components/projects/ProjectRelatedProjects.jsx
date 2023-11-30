@@ -1,24 +1,23 @@
-const ProjectRelatedProjects = () => {
-	const singleProject = (store) => store.singleProject.singleProject;
-	console.log(singleProject);
-	return (
-		<div className='mt-10 pt-10 sm:pt-14 sm:mt-20 border-t-2 border-primary-light dark:border-secondary-dark'>
-			<p className='font-general-regular text-primary-dark dark:text-primary-light text-3xl font-bold mb-10 sm:mb-14 text-left'>
-				{/* {singleProjectData.RelatedProject.title} */}ffvvf
-			</p>
+import { Image } from "antd";
+import { useSelector } from "react-redux";
 
-			{/* <div className="grid grid-cols-1 sm:grid-cols-4 gap-10">
-				{singleProjectData.RelatedProject.Projects.map((project) => {
+const ProjectRelatedProjects = () => {
+	const singleProject = useSelector((store) => store.singleProject.singleProject);
+
+	return (
+		<div className='grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12 items-center -mb-2'>
+			{singleProject.length > 0 &&
+				singleProject[0]?.images?.map((item) => {
 					return (
-						<img
-							src={project?.img}
-							className="rounded-xl cursor-pointer"
-							alt={project?.title}
-							key={project?._id}
-						/>
+						<div className='mb-10 sm:mb-0' key={item}>
+							<Image
+								src={item}
+								className='rounded-xl cursor-pointer shadow-lg sm:shadow-none '
+								alt={"alt"}
+							/>
+						</div>
 					);
 				})}
-			</div> */}
 		</div>
 	);
 };
