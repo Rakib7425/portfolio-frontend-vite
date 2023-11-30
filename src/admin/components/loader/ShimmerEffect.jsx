@@ -13,7 +13,7 @@ const ShimmerEffect = () => {
 	// 	boxShadow: " 0 4px 8px rgba(0, 0, 0, 0.1)",
 	// }}
 	return (
-		<div className='-mt-56 block mb-32'>
+		<div className='-mt-[25%] mb-[20%]'>
 			{/* <div className='rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-ternary-dark'>
 				<div
 					style={{

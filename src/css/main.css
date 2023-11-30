@@ -681,6 +681,27 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
+.-mt-\[50\%\] {
+  margin-top: -50%;
+}
+.mb-\[20\%\] {
+  margin-bottom: 20%;
+}
+.mt-\[50\%\] {
+  margin-top: 50%;
+}
+.mt-\[10\%\] {
+  margin-top: 10%;
+}
+.-mt-\[10\%\] {
+  margin-top: -10%;
+}
+.-mt-\[20\%\] {
+  margin-top: -20%;
+}
+.-mt-\[25\%\] {
+  margin-top: -25%;
+}
 .block {
   display: block;
 }
