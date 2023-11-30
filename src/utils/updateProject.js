@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { updateProjectApiUrl } from "../apis/APIs";
 
 const updateProject = async (projectId, formDataLocal, localImages) => {
@@ -32,6 +33,7 @@ const updateProject = async (projectId, formDataLocal, localImages) => {
 		if (data.success) {
 			return data;
 		} else {
+			toast.error(data.message);
 			return false;
 		}
 	} catch (error) {
