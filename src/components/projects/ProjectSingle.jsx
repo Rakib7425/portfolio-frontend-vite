@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 import ShimmerEffect from "../../admin/components/loader/ShimmerEffect";
 
 const ProjectSingle = ({ id, title, category, image, loading }) => {
-	return loading ? (
-		<div className='min-h-[50vh] min-w-[50vw]'>
-			<ShimmerEffect />
-		</div>
-	) : (
+	return (
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1, delay: 1 }}
@@ -21,11 +17,24 @@ const ProjectSingle = ({ id, title, category, image, loading }) => {
 			<Link to={`/project/${id}`} aria-label='Single Project'>
 				<div className='rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark'>
 					<div>
-						<img
-							src={image}
-							className='rounded-t-xl border-none'
-							alt='Single Project'
-						/>
+						{loading ? (
+							<ShimmerEffect />
+						) : (
+							<img
+								style={{
+									position: "relative",
+									width: "400px",
+									height: "225px",
+									backgroundColor: "#f0f0f0",
+									borderRadius: "8px",
+									overflow: "hidden",
+									boxShadow: " 0 4px 8px rgba(0, 0, 0, 0.1)",
+								}}
+								src={image}
+								className='rounded-t-xl border-none'
+								alt='Single Project'
+							/>
+						)}
 					</div>
 					<div className='text-center px-4 py-6'>
 						<p className='font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2'>

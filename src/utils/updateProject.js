@@ -1,19 +1,28 @@
 import { toast } from "react-toastify";
 import { updateProjectApiUrl } from "../apis/APIs";
 
-const updateProject = async (projectId, formDataLocal, localImages) => {
+const updateProject = async (projectId, setLoading, formDataLocal, localImages) => {
 	try {
+		setLoading(true);
 		let headersList = {};
 
 		let bodyContent = new FormData();
-		// Append other form data fields
-		bodyContent.append("title", formDataLocal.title);
-		bodyContent.append("hostedLink", formDataLocal.hostedLink);
-		bodyContent.append("gitHubLink", formDataLocal.gitHubLink);
-		bodyContent.append("category", formDataLocal.category);
-		bodyContent.append("description", formDataLocal.description);
-		bodyContent.append("challenges", formDataLocal.challenges);
-		bodyContent.append("technologies", formDataLocal.technologies);
+
+		// Define an array of field names
+		const fieldNames = [
+			"title",
+			"hostedLink",
+			"gitHubLink",
+			"category",
+			"description",
+			"challenges",
+			"technologies",
+		];
+
+		// Iterate over the field names and append corresponding values
+		fieldNames.forEach((fieldName) => {
+			bodyContent.append(fieldName, formDataLocal[fieldName]);
+		});
 
 		if (localImages) {
 			localImages.forEach((img) => {
@@ -31,12 +40,15 @@ const updateProject = async (projectId, formDataLocal, localImages) => {
 		// console.log(data);
 
 		if (data.success) {
+			setLoading(false);
 			return data;
 		} else {
+			setLoading(false);
 			toast.error(data.message);
 			return false;
 		}
 	} catch (error) {
+		setLoading(false);
 		console.log(error);
 		return false;
 	}

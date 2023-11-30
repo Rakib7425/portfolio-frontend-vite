@@ -35,6 +35,7 @@ const AppHeader = () => {
 			? {
 					borderBottom: "solid 2.5px yellow",
 					marginBottom: "6px",
+					// eslint-disable-next-line no-mixed-spaces-and-tabs
 			  }
 			: {};
 

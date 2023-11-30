@@ -34,10 +34,16 @@ const ProjectSingle = () => {
 			}}
 			className='container mx-auto mt-5 sm:mt-10'
 		>
-			{loading ? <ShimmerEffect /> : <ProjectHeader />}
-			{loading ? <ShimmerEffect /> : <ProjectGallery />}
-			{loading ? <ShimmerEffect /> : <ProjectInfo />}
-			{loading ? <ShimmerEffect /> : <ProjectRelatedProjects />}
+			{loading ? (
+				<ShimmerEffect />
+			) : (
+				<>
+					<ProjectHeader />
+					<ProjectGallery />
+					<ProjectInfo />
+					<ProjectRelatedProjects />
+				</>
+			)}
 		</motion.div>
 	);
 };

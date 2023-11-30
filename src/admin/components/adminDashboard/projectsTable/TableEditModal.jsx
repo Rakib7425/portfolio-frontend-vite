@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { toggleModalTo } from "../../../../store/configSlice";
 import { useEffect, useState } from "react";
-import { Form, Image, Modal } from "antd";
+import { Button, Form, Image, Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { reuseInputClassnamesModal as reuseClassnames } from "../../../../constants/adminConstants";
 import { updateProject } from "../../../../utils/updateProject";
 
 const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
-	// const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false);
 	// const [warning, setWarning] = useState("");
 
 	const [formData, setFormData] = useState({
@@ -68,7 +68,7 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 	const handleClick = async () => {
 		// console.log(localImages);
 
-		const dbResponse = await updateProject(editingItem._id, formData, localImages);
+		const dbResponse = await updateProject(editingItem._id, setLoading, formData, localImages);
 		// console.log(dbResponse);
 		if (dbResponse.success) {
 			setNeedReRender(!needReRender);
@@ -289,12 +289,13 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 							></textarea>
 						</div>
 
-						<button
-							className='flex w-full bg-blue-600 hover:bg-blue-500 duration-200 justify-center rounded bg-primary p-3 font-medium text-gray  text-white'
+						<Button
+							loading={loading}
+							className='flex items-center w-full h-7  bg-blue-600 hover:bg-blue-700 duration-200 justify-center rounded bg-primary py-6 font-medium text-gray  text-white hover:text-base'
 							onClick={handleClick}
 						>
 							Upload Post
-						</button>
+						</Button>
 					</div>
 				</Form>
 				{/* 

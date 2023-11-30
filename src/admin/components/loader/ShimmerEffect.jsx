@@ -1,23 +1,40 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import { ShimmerPostItem } from "react-shimmer-effects";
+
+import Loader from "./Loader";
 
 const ShimmerEffect = () => {
+	// style={{
+	// 	position: "relative",
+	// 	width: "400px",
+	// 	height: "225px",
+	// 	backgroundColor: "#f0f0f0",
+	// 	borderRadius: "8px",
+	// 	overflow: "hidden",
+	// 	boxShadow: " 0 4px 8px rgba(0, 0, 0, 0.1)",
+	// }}
 	return (
-		<div>
-			<div className='rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark'>
-				<div>
-					<ShimmerPostItem card />
-				</div>
-				<div className='text-center px-4 py-6'>
-					<p className='font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2'>
-						<ShimmerPostItem title />
-					</p>
-					<span className='text-lg text-ternary-dark dark:text-ternary-light'>
-						<ShimmerPostItem cta title />
-					</span>
-				</div>
-			</div>
+		<div className='-mt-56 block mb-32'>
+			{/* <div className='rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-ternary-dark'>
+				<div
+					style={{
+						background:
+							"linear-gradient(to right, #272424 0%, #262525 50%, #1f1d1d 100%)",
+					}}
+				> */}
+			{/* <ShimmerPostItem
+				card
+				title
+				cta
+				title
+				style={{
+					background:
+						"linear-gradient(to right, #272424 0%, #262525 50%, #1f1d1d 100%)",
+				}}
+			/> */}
+			<Loader />
 		</div>
+		// 	</div>
+		// </div>
 	);
 };
 

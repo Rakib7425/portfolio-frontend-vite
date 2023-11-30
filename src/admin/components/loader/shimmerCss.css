@@ -1,0 +1,20 @@
+.shimmer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 400px;
+	height: 225px;
+	background: linear-gradient(to right, #272424 0%, #262525 50%, #1f1d1d 100%);
+	background-size: 200% 100%;
+	animation: shimmerAnimation 1.5s infinite;
+	/* background-color: rgb(5, 35, 35); */
+}
+
+@keyframes shimmerAnimation {
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: -100% 0;
+	}
+}
