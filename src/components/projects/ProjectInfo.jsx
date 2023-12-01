@@ -88,12 +88,10 @@ const ProjectInfo = () => {
 			<div className='w-full sm:w-2/3 text-left mt-10 sm:mt-0'>
 				{/* Single project objectives */}
 				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7'>
-					Description
+					Description -
 				</p>
 
-				{/* <p className='font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light'>
-					{singleProjectData.description}
-				</p> */}
+				{/* Rendering the description of a single project. */}
 				<p className='font-general-regular text-primary-dark dark:text-ternary-light'>
 					{singleProjectData.description && (
 						<>
@@ -107,12 +105,22 @@ const ProjectInfo = () => {
 					)}
 				</p>
 
-				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7'>
-					Challenges
+				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7 mt-7'>
+					Challenges -
 				</p>
 
-				<p className='font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light'>
-					{singleProjectData.challenges}
+				{/* Rendering the description of a single project. */}
+				<p className='font-general-regular text-primary-dark dark:text-ternary-light'>
+					{singleProjectData.challenges && (
+						<>
+							{singleProjectData.challenges.split("\n").map((line, index) => (
+								<section key={index}>
+									{line}
+									<br />
+								</section>
+							))}
+						</>
+					)}
 				</p>
 			</div>
 		</div>
