@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { reuseInputClassnamesModal as reuseClassnames } from "../../../../constants/adminConstants";
 import { updateProject } from "../../../../utils/updateProject";
 
-const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
+const TableEditModal = ({ editingItem, setEditingItem, needReRender, setNeedReRender }) => {
 	const [loading, setLoading] = useState(false);
 	// const [warning, setWarning] = useState("");
 
@@ -45,8 +45,9 @@ const TableEditModal = ({ editingItem, needReRender, setNeedReRender }) => {
 	}, [editingItem]);
 
 	const handleCancel = () => {
-		dispatch(toggleModalTo(false));
 		setLocalImages(images);
+		setEditingItem(null);
+		dispatch(toggleModalTo(false));
 	};
 
 	const onFinishFailed = (errorInfo) => {

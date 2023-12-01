@@ -27,7 +27,7 @@ const ProjectInfo = () => {
 									"hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 first-letter:cursor-pointer duration-300 underline"
 								}
 							>
-								{singleProjectData.hostedLink}
+								{singleProjectData?.hostedLink}
 							</Link>
 						</li>
 						<li className='font-general-regular text-ternary-dark dark:text-ternary-light'>
@@ -87,7 +87,7 @@ const ProjectInfo = () => {
 			{/*  Single project right section */}
 			<div className='w-full sm:w-2/3 text-left mt-10 sm:mt-0'>
 				{/* Single project objectives */}
-				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7'>
+				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-2'>
 					Description -
 				</p>
 

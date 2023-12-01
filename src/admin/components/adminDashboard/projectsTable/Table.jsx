@@ -57,6 +57,7 @@ const Table = () => {
 				<div className='modal w-full z-20'>
 					<TableEditModal
 						editingItem={editingItem}
+						setEditingItem={setEditingItem}
 						needReRender={needReRender}
 						setNeedReRender={setNeedReRender}
 					/>
