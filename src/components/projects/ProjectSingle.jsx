@@ -21,15 +21,6 @@ const ProjectSingle = ({ id, title, category, image, loading }) => {
 							<ShimmerEffect />
 						) : (
 							<img
-								style={{
-									position: "relative",
-									width: "400px",
-									height: "225px",
-									backgroundColor: "#f0f0f0",
-									borderRadius: "8px",
-									overflow: "hidden",
-									boxShadow: " 0 4px 8px rgba(0, 0, 0, 0.1)",
-								}}
 								src={image}
 								className='rounded-t-xl border-none'
 								alt='Single Project'
