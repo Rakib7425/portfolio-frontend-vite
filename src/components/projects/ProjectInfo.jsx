@@ -51,7 +51,7 @@ const ProjectInfo = () => {
 						Overview
 					</p>
 					<p className='font-general-regular text-primary-dark dark:text-ternary-light'>
-						{singleProjectData.description}
+						{singleProjectData.description.slice(0, 300) + ". . . . . ."}
 					</p>
 				</div>
 
@@ -91,8 +91,20 @@ const ProjectInfo = () => {
 					Description
 				</p>
 
-				<p className='font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light'>
+				{/* <p className='font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light'>
 					{singleProjectData.description}
+				</p> */}
+				<p className='font-general-regular text-primary-dark dark:text-ternary-light'>
+					{singleProjectData.description && (
+						<>
+							{singleProjectData.description.split("\n").map((line, index) => (
+								<section key={index}>
+									{line}
+									<br />
+								</section>
+							))}
+						</>
+					)}
 				</p>
 
 				<p className='font-general-regular text-primary-dark dark:text-primary-light text-2xl font-bold mb-7'>
