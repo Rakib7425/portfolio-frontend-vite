@@ -18,7 +18,11 @@ const AboutMeBio = () => {
 				}}
 				className='w-full sm:w-5/12 mb-7 sm:mb-0'
 			>
-				<img src={profileImage} className='rounded-lg w-full dark:brightness-90' alt=' ' />
+				<img
+					src={profileImage}
+					className='rounded-lg w-full dark:brightness-90'
+					alt='myImage'
+				/>
 			</motion.div>
 
 			<div className='font-general-regular w-full sm:w-3/4 text-left'>

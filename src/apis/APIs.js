@@ -5,7 +5,8 @@ export const getProjectByIdApiUrl =
 	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/getproject";
 export const deleteProjectByIdApiUrl =
 	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/deleteproject?";
-export const getContactQueriesApiUrl = "";
+export const getContactQueriesApiUrl =
+	"https://portfolio-backend-gwo5.onrender.com/api/v1/admins/contact";
 export const addContactQueriesApiUrl = "";
 
 // Admin api's
@@ -22,7 +23,7 @@ export const loginAdminApiUrl = "https://portfolio-backend-gwo5.onrender.com/api
 // export const getProjectsApiUrl = "http://localhost:8080/api/v1/projects/getprojects";
 // export const getProjectByIdApiUrl = "http://localhost:8080/api/v1/projects/getproject";
 // export const deleteProjectByIdApiUrl = "http://localhost:8080/api/v1/projects/deleteproject?";
-// export const getContactQueriesApiUrl = "";
+// export const getContactQueriesApiUrl = "http://localhost:8080/api/v1/admins/contact";
 // export const addContactQueriesApiUrl = "";
 
 // // Admin api's

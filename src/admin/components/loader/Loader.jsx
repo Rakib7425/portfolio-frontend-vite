@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import "./loader.css";
 
-const Loader = () => {
+const Loader = ({ className = "" }) => {
 	return (
-		<div className='loaderDiv'>
+		<div className={`loaderDiv ${className}`}>
 			<span className='loader'></span>
 		</div>
 	);
