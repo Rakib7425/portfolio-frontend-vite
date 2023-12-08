@@ -8,7 +8,7 @@ export const getContactQueries = async (setIsLoading) => {
 		});
 
 		let data = await response.json();
-		console.log(data);
+		// console.log(data);
 		setIsLoading(false);
 		return data;
 

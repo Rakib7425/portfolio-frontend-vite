@@ -1,12 +1,16 @@
-import profileImage from "../../images/profile.jpeg";
 import { useContext } from "react";
 import AboutMeContext from "../../context/AboutMeContext";
 import { motion } from "framer-motion";
+import Loader from "../../admin/components/loader/Loader";
 
 const AboutMeBio = () => {
-	const { aboutMe } = useContext(AboutMeContext);
+	const { aboutMe, loading } = useContext(AboutMeContext);
+	const data = aboutMe.data;
 
-	return (
+	//
+	return loading ? (
+		<Loader />
+	) : (
 		<div className='block sm:flex sm:gap-10 mt-10 sm:mt-20'>
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -19,21 +23,21 @@ const AboutMeBio = () => {
 				className='w-full sm:w-5/12 mb-7 sm:mb-0'
 			>
 				<img
-					src={profileImage}
+					src={data?.profilePhoto}
 					className='rounded-lg w-full dark:brightness-90'
-					alt='myImage'
+					alt='myProfileImage'
 				/>
 			</motion.div>
 
-			<div className='font-general-regular w-full sm:w-3/4 text-left'>
-				{aboutMe.map((bio) => (
-					<p
-						className='mb-4 text-ternary-dark dark:text-ternary-light text-lg'
-						key={bio.id}
-					>
-						{bio.bio}
-					</p>
-				))}
+			<div className='font-general-regular w-full sm:w-3/4 text-left dark:text-white'>
+				{aboutMe &&
+					data &&
+					data?.description.split("\n").map((line, index) => (
+						<section key={index}>
+							{line}
+							<br />
+						</section>
+					))}
 			</div>
 		</div>
 	);

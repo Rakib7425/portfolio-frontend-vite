@@ -1,16 +1,25 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { clientsHeading as clientsPageHeading } from "../data/clientsData";
 import { clientsData as clientsDataJson } from "../data/clientsData";
-import { aboutMeData } from "../utils/aboutMeData";
+import { getAboutMeData } from "../utils/aboutMeData";
 
 const AboutMeContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const AboutMeProvider = ({ children }) => {
-	const [aboutMe, setAboutMe] = useState(aboutMeData);
+	const [aboutMe, setAboutMe] = useState([]);
+	const [loading, setLoading] = useState([]);
 
 	const clientsHeading = clientsPageHeading;
 
 	const [clientsData, setClientsData] = useState(clientsDataJson);
+
+	useEffect(() => {
+		const getData = async () => {
+			setAboutMe(await getAboutMeData(setLoading));
+		};
+		getData();
+	}, []);
 
 	return (
 		<AboutMeContext.Provider
@@ -20,6 +29,7 @@ export const AboutMeProvider = ({ children }) => {
 				clientsHeading,
 				clientsData,
 				setClientsData,
+				loading,
 			}}
 		>
 			{children}

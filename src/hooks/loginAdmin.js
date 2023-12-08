@@ -1,11 +1,7 @@
-import { useState } from "react";
-import { loginAdminApiUrl } from "../apis/APIs";
-import useFetch from "../hooks/useFetch";
-import { setAdmin } from "../store/adminSlice";
-import { useDispatch } from "react-redux";
+/* eslint-disable no-unused-vars */
 
+import { useState } from "react";
 const useLogin = () => {
-	const dispatch = useDispatch();
 	const [loading, setLoading] = useState(false);
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(null);

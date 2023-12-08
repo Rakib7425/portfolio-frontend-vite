@@ -3,9 +3,23 @@ import { FiArrowDownCircle } from "react-icons/fi";
 import developerLight from "../../images/developer.svg";
 import developerDark from "../../images/developer-dark.svg";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { getAboutMeData } from "../../utils/aboutMeData";
 
 const AppBanner = () => {
 	const [activeTheme] = useThemeSwitcher();
+	const [loading, setLoading] = useState([]);
+
+	const [techStack, setTechStack] = useState([]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await getAboutMeData(setLoading);
+			setTechStack(data.data.techStack);
+			// console.log(data);
+		};
+		getData();
+	}, []);
 
 	return (
 		<motion.section
@@ -61,7 +75,33 @@ const AppBanner = () => {
 						</span>
 					</a>
 				</motion.div>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						ease: "easeInOut",
+						duration: 0.9,
+						delay: 0.3,
+					}}
+					className='flex justify-center sm:block mt-10 '
+				>
+					<h2 className='text-xl font-bold dark:text-white mb-2 border-b-2 border-gray-300'>
+						My-Tech Stack : -
+					</h2>
+
+					<div className='logos flex flex-wrap gap-3 justify-between mt-2'>
+						{techStack &&
+							techStack.map((techImg) =>
+								loading ? (
+									"loading..."
+								) : (
+									<img key={techImg} src={techImg} alt='' className='w-10 h-10' />
+								)
+							)}
+					</div>
+				</motion.div>
 			</div>
+
 			<motion.div
 				initial={{ opacity: 0, y: -180 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -69,6 +109,7 @@ const AppBanner = () => {
 				className='w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0'
 			>
 				<img
+					className='block'
 					src={activeTheme === "dark" ? developerLight : developerDark}
 					alt='Developer'
 				/>
