@@ -89,7 +89,7 @@ const AppBanner = () => {
 						My-Tech Stack : -
 					</h2>
 
-					<div className='logos flex flex-wrap gap-3 justify-between mt-2'>
+					<div className='logos flex flex-wrap gap-3 justify-start mt-2'>
 						{techStack &&
 							techStack.map((techImg) =>
 								loading ? (

@@ -9,7 +9,9 @@ const AboutMeBio = () => {
 
 	//
 	return loading ? (
-		<Loader />
+		<div className='-mt-60 mb-60'>
+			<Loader />
+		</div>
 	) : (
 		<div className='block sm:flex sm:gap-10 mt-10 sm:mt-20'>
 			<motion.div
