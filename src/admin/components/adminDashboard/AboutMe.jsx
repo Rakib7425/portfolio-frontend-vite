@@ -1,7 +1,25 @@
-import { reuseInputClassnames } from "../../../constants/adminConstants";
+import { useEffect, useState } from "react";
+import { getAboutMeData } from "../../../utils/aboutMeData";
+import Loader from "../loader/Loader";
+import AboutMeForm from "./AboutMeForm";
 
 const AboutMe = () => {
-	return (
+	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState([]);
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await getAboutMeData(setLoading);
+			setData(data.data);
+		};
+		getData();
+	}, []);
+
+	return loading ? (
+		<div>
+			<Loader />
+		</div>
+	) : (
 		<div className='w-full'>
 			<form
 				onSubmit={(e) => {
@@ -14,27 +32,7 @@ const AboutMe = () => {
 				className='w-full'
 			>
 				<div className='mb-6'>
-					<label className='my-2.5 block text-black '>
-						<span className='text-meta-1 dark:text-white'> About Myself *</span>
-					</label>
-					<textarea
-						rows='6'
-						placeholder='Type About Myself'
-						className={reuseInputClassnames}
-						// value={formData.description}
-						// onChange={(e) => {
-						// 	setFormData((prevFormData) => ({
-						// 		...prevFormData,
-						// 		description: e.target.value,
-						// 	}));
-						// }}
-					></textarea>
-					<button
-						className='flex w-full bg-blue-600 hover:bg-blue-500 duration-200 justify-center rounded bg-primary p-3 font-medium text-gray  text-white'
-						// onClick={handleClick}
-					>
-						Update Now
-					</button>
+					<AboutMeForm data={data} loading={loading} setLoading={setLoading} />
 				</div>
 			</form>
 		</div>
