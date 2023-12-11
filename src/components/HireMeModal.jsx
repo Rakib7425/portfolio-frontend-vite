@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
-import Button from "./reusable/Button";
 import { contactMeApiUrl } from "../apis/APIs";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { reuseInputClassnames } from "../constants/adminConstants";
+import { Button } from "antd";
 
 const selectOptions = [
+	"Select option",
 	"Web Application",
 	"Mobile Application",
 	"UI/UX Design",
@@ -22,11 +23,14 @@ const HireMeModal = ({ onClose }) => {
 		subject: "",
 		message: "",
 	});
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmitForm = async () => {
+		setLoading(true);
 		const { fullName, email, subject, message } = formData;
 
 		if (!(fullName && email && subject && message)) {
+			setLoading(false);
 			return toast.warn(`All fields are required!`);
 		}
 
@@ -57,7 +61,10 @@ const HireMeModal = ({ onClose }) => {
 				subject: "",
 				message: "",
 			});
+			setLoading(false);
 			onClose();
+		} else {
+			setLoading(false);
 		}
 	};
 
@@ -187,15 +194,13 @@ const HireMeModal = ({ onClose }) => {
 
 									<div className='flex max-w-40 px-4 py-2.5 justify-between'>
 										<div
-											className='font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-red-500 hover:bg-red-400 focus:ring-1 focus:ring-red-900 rounded-lg mt-6 duration-500 cursor-pointer'
+											className='font-general-medium w-40 px-4 py-2.5 text-white text-center font-medium tracking-wider bg-red-500 hover:bg-red-400 focus:ring-1 focus:ring-red-900 rounded-lg mt-6 duration-500 cursor-pointer text-lg'
 											onClick={onClose}
 										>
 											<div className='sendMessage'>
-												<Button
-													title='Close'
-													type='submit'
-													aria-label='Close'
-												/>
+												<Button className='outline-none border-none cursor-pointer text-white text-lg'>
+													Close
+												</Button>
 											</div>
 										</div>
 										<div
@@ -204,10 +209,11 @@ const HireMeModal = ({ onClose }) => {
 										>
 											<div className='sendMessage'>
 												<Button
-													title='Send Message'
-													type='submit'
-													aria-label='Send Message'
-												/>
+													className='outline-none border-none cursor-pointer text-white text-lg'
+													loading={loading}
+												>
+													Send Message
+												</Button>
 											</div>
 										</div>
 									</div>

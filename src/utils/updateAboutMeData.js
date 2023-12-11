@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { updateAboutMeApiUrl } from "../apis/APIs";
 
-const updateAboutMeData = async (setLoading, formDataLocal, image = null) => {
+const updateAboutMeData = async (setLoading, formDataLocal, image = null, setData) => {
 	try {
 		setLoading(true);
 		let headersList = {};
@@ -38,10 +38,12 @@ const updateAboutMeData = async (setLoading, formDataLocal, image = null) => {
 		});
 
 		let data = await response.json();
-		console.log(data);
+		// console.log(data);
 
 		if (data.success) {
 			setLoading(false);
+			setData(data.data);
+			toast.success(`Successfully updated !!`);
 			return data;
 		} else {
 			setLoading(false);

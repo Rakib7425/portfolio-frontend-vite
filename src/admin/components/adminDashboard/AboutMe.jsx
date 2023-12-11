@@ -16,9 +16,7 @@ const AboutMe = () => {
 	}, []);
 
 	return loading ? (
-		<div>
-			<Loader />
-		</div>
+		<Loader className='-mt-52 mb-28' />
 	) : (
 		<div className='w-full'>
 			<form
@@ -32,7 +30,12 @@ const AboutMe = () => {
 				className='w-full'
 			>
 				<div className='mb-6'>
-					<AboutMeForm data={data} loading={loading} setLoading={setLoading} />
+					<AboutMeForm
+						data={data}
+						setData={setData}
+						loading={loading}
+						setLoading={setLoading}
+					/>
 				</div>
 			</form>
 		</div>

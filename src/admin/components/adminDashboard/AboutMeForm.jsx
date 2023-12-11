@@ -3,7 +3,7 @@ import { useState } from "react";
 import { reuseInputClassnames } from "../../../constants/adminConstants";
 import { updateAboutMeData } from "../../../utils/updateAboutMeData";
 
-const AboutMeForm = ({ data, loading, setLoading }) => {
+const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 	const [formData, setFormData] = useState({
 		name: data.name,
 		email: data.email,
@@ -17,7 +17,7 @@ const AboutMeForm = ({ data, loading, setLoading }) => {
 
 	const handleUpdate = () => {
 		// console.log(formData);
-		updateAboutMeData(setLoading, formData, image);
+		updateAboutMeData(setLoading, formData, image, setData);
 	};
 
 	return (
