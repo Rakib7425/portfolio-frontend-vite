@@ -38,3 +38,7 @@ export const AboutMeProvider = ({ children }) => {
 };
 
 export default AboutMeContext;
+
+// export const useAboutMeContext = () => {
+// 	return useContext(AboutMeContext);
+// };

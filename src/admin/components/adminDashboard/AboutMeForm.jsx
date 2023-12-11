@@ -104,23 +104,25 @@ const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 			/>
 
 			<label className='my-2.5 block text-black' id='techStack'>
-				<span className='text-meta-1 dark:text-white'> Tech Stack *</span>
+				<span className='text-meta-1 dark:text-white '> Tech Stack *</span>
 
-				<div className='techStack flex items-center gap-3'>
+				<div className='techStack flex items-center gap-3 my-2'>
 					{data.techStack &&
 						data?.techStack?.map((techImg, indx) =>
 							loading ? (
 								"loading... "
 							) : (
-								<img key={indx} src={techImg} alt='' className='w-10 h-10' />
+								<img key={indx} src={techImg} alt='' className='w-12 h-12' />
 							)
 						)}
-
-					{/* Button for add Tech Stack */}
-					<AddTechStackModal />
 				</div>
 			</label>
 
+			{/*  */}
+			{/* Button for add Tech Stack */}
+			<AddTechStackModal setData={setData} />
+
+			{/*  */}
 			<label className='my-2.5 block text-black' id='profilePhoto'>
 				<span className='text-meta-1 dark:text-white'> ProfilePhoto*</span>
 			</label>
