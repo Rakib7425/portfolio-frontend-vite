@@ -593,15 +593,20 @@ video {
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
 }
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
 .-mb-2 {
   margin-bottom: -0.5rem;
-}
-.-mt-40 {
-  margin-top: -10rem;
 }
 .-mt-52 {
   margin-top: -13rem;
@@ -737,6 +742,9 @@ video {
 }
 .h-20 {
   height: 5rem;
+}
+.h-32 {
+  height: 8rem;
 }
 .h-5 {
   height: 1.25rem;
@@ -1089,6 +1097,9 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-\[16px\] {
+  font-size: 16px;
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1157,6 +1168,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(16 45 68 / var(--tw-text-opacity));
 }
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
 .text-ternary-dark {
   --tw-text-opacity: 1;
   color: rgb(30 56 81 / var(--tw-text-opacity));
@@ -1168,6 +1183,10 @@ video {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;

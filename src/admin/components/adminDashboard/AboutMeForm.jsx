@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { reuseInputClassnames } from "../../../constants/adminConstants";
 import { updateAboutMeData } from "../../../utils/updateAboutMeData";
+import AddTechStackModal from "./AddTechStackModal";
 
 const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 	const [formData, setFormData] = useState({
@@ -106,22 +107,17 @@ const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 				<span className='text-meta-1 dark:text-white'> Tech Stack *</span>
 
 				<div className='techStack flex items-center gap-3'>
-					{/* <input
-						type='text'
-						className={reuseInputClassnames + "relative"}
-						name='techStack'
-					/> */}
 					{data.techStack &&
-						data?.techStack.map((techImg) =>
+						data?.techStack?.map((techImg, indx) =>
 							loading ? (
-								"loading..."
+								"loading... "
 							) : (
-								<img key={techImg} src={techImg} alt='' className='w-10 h-10' />
+								<img key={indx} src={techImg} alt='' className='w-10 h-10' />
 							)
 						)}
-					<button className='absolute  right-52 mr-3  dark:bg-stone-700 hover:bg-stone-800 dark:text-white duration-100 py-2 px-5 rounded-md'>
-						Add
-					</button>
+
+					{/* Button for add Tech Stack */}
+					<AddTechStackModal />
 				</div>
 			</label>
 
