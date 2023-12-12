@@ -106,7 +106,7 @@ const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 			<label className='my-2.5 block text-black' id='techStack'>
 				<span className='text-meta-1 dark:text-white '> Tech Stack *</span>
 
-				<div className='techStack flex items-center gap-3 my-2'>
+				<div className='techStack flex flex-wrap items-center gap-3 my-2'>
 					{data.techStack &&
 						data?.techStack?.map((techImg, indx) =>
 							loading ? (

@@ -64,7 +64,7 @@ const AddTechStackModal = ({ setData }) => {
 					onClick={() => setModalOpen(true)}
 				>
 					<span className='flex items-center gap-2'>
-						<TbPhotoPlus /> Add Tech Stack
+						<TbPhotoPlus /> <span>Add Tech Stack</span>
 					</span>
 				</button>
 				<Modal
