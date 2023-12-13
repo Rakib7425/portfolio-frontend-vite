@@ -48,7 +48,7 @@ const AppHeader = () => {
 		>
 			<div className='z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6'>
 				{/* Header menu NavLinks and small screen hamburger menu */}
-				<div className='flex justify-between items-center px-4 sm:px-0'>
+				<div className='flex justify-between items-center px-4 sm:px-0 hover:opacity-80 duration-200'>
 					<div>
 						<NavLink style={navNavLinkStyle} to='/'>
 							{activeTheme === "dark" ? (
@@ -192,6 +192,9 @@ const AppHeader = () => {
 							aria-label='Hire Me Button'
 						>
 							<Button title='Hire Me' />
+							{/* <button>
+								<span className='text-base'>Hire Me</span>{" "}
+							</button> */}
 						</span>
 					</div>
 
