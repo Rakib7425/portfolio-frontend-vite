@@ -1,10 +1,20 @@
 import Table from "./projectsTable/Table";
+import { motion } from "framer-motion";
 
 const MyProjects = () => {
 	return (
-		<div className=' w-full '>
+		<motion.div
+			className=' w-full h-80'
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1, delay: 1 }}
+			transition={{
+				ease: "easeInOut",
+				duration: 0.7,
+				delay: 0.15,
+			}}
+		>
 			<Table />
-		</div>
+		</motion.div>
 	);
 };
 

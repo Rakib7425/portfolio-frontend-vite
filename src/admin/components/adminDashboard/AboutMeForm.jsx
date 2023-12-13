@@ -3,6 +3,7 @@ import { useState } from "react";
 import { reuseInputClassnames } from "../../../constants/adminConstants";
 import { updateAboutMeData } from "../../../utils/updateAboutMeData";
 import AddTechStackModal from "./AddTechStackModal";
+import { motion } from "framer-motion";
 
 const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 	const [formData, setFormData] = useState({
@@ -22,7 +23,15 @@ const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 	};
 
 	return (
-		<div>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1, delay: 1 }}
+			transition={{
+				ease: "easeInOut",
+				duration: 0.7,
+				delay: 0.15,
+			}}
+		>
 			<label className='my-2.5 block text-black' id='name'>
 				<span className='text-meta-1 dark:text-white'> Name *</span>
 			</label>
@@ -164,7 +173,7 @@ const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 			>
 				Update Now
 			</button>
-		</div>
+		</motion.div>
 	);
 };
 

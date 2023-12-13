@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getContactQueries } from "../../../utils/getContactQueries";
 import Loader from "../loader/Loader";
+import { motion } from "framer-motion";
+
 const ContactQueries = () => {
 	const [contactQueries, setContactQueries] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +26,16 @@ const ContactQueries = () => {
 	return isLoading ? (
 		<Loader className='-mt-52 mb-28' />
 	) : (
-		<div className='antialiased sans-serif w-full'>
+		<motion.div
+			className='antialiased sans-serif w-full'
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1, delay: 1 }}
+			transition={{
+				ease: "easeInOut",
+				duration: 0.7,
+				delay: 0.15,
+			}}
+		>
 			<div className='container mx-auto py-6 px-4'>
 				<table className='border-collapse table-auto w-full whitespace-no-wrap text-black dark:text-white table-striped relative'>
 					<thead>
@@ -57,7 +68,7 @@ const ContactQueries = () => {
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

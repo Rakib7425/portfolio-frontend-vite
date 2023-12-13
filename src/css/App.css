@@ -106,3 +106,16 @@ body::-webkit-scrollbar-thumb {
 	width: 50vw;
 	margin: 0 auto;
 }
+
+/* navLink */
+.customNavLink:after {
+	display: block;
+	content: "";
+	border-bottom: 2.5px solid yellow;
+	transform: scaleX(0);
+	margin-bottom: -12px;
+	transition: transform 250ms ease-in-out;
+}
+.customNavLink:hover:after {
+	transform: scaleX(1);
+}
