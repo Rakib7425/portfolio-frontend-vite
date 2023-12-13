@@ -7,6 +7,7 @@ import Loader from "../../loader/Loader.jsx";
 import { Button, Popconfirm } from "antd";
 import { toast } from "react-toastify";
 import { deleteProject } from "../../../../utils/deleteProject.js";
+import { motion } from "framer-motion";
 
 const Table = () => {
 	const isModalOpen = useSelector((store) => store.config.isModalOpen);
@@ -52,7 +53,15 @@ const Table = () => {
 			<Loader />
 		</div>
 	) : (
-		<>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1, delay: 1 }}
+			transition={{
+				ease: "easeInOut",
+				duration: 0.7,
+				delay: 0.15,
+			}}
+		>
 			{editingItem !== null && (
 				<div className='modal w-full z-20'>
 					<TableEditModal
@@ -115,7 +124,7 @@ const Table = () => {
 						))}
 				</tbody>
 			</table>
-		</>
+		</motion.div>
 	);
 };
 
