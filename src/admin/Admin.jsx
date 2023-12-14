@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 const Admin = () => {
 	const admin = useSelector((store) => store.admin.admin);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
