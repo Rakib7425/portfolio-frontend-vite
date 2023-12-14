@@ -41,6 +41,7 @@ const Table = () => {
 
 	const confirmDelete = async (itemId) => {
 		toast.success("Deleted with Project Id " + itemId);
+
 		const isSuccess = await deleteProject(itemId);
 		console.log(isSuccess);
 		if (isSuccess) {
