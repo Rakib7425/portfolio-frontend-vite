@@ -15,6 +15,7 @@ const AboutMeForm = ({ data, setData, loading, setLoading }) => {
 		techStack: data.techStack,
 		description: data.description,
 	});
+
 	const [image, setImage] = useState(null);
 
 	const handleUpdate = () => {
