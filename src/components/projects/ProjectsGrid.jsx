@@ -106,6 +106,8 @@ const ProjectsGrid = () => {
 								image={project.images[0]}
 								key={project._id}
 								loading={loading}
+								hostedLink={project.hostedLink}
+								gitHubLink={project.gitHubLink}
 							/>
 					  ))
 					: searchProject
@@ -117,6 +119,8 @@ const ProjectsGrid = () => {
 								image={project.images[0]}
 								key={project._id}
 								loading={loading}
+								hostedLink={project.hostedLink}
+								gitHubLink={project.gitHubLink}
 							/>
 					  ))
 					: projects.map((project) => (
@@ -127,6 +131,8 @@ const ProjectsGrid = () => {
 								image={project.images[0]}
 								key={project._id}
 								loading={loading}
+								hostedLink={project.hostedLink}
+								gitHubLink={project.gitHubLink}
 							/>
 					  ))}
 			</div>

@@ -28,6 +28,7 @@
     "react-shimmer-effects": "^1.0.3",
     "react-toastify": "^9.1.3",
     "react-web-share": "^2.0.2",
+    "redux-persist": "^6.0.0",
     "styled-components": "^6.1.1",
     "web-vitals": "^3.5.0"
   },
