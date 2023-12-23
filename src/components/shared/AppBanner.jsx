@@ -51,7 +51,7 @@ const AppBanner = () => {
 					}}
 					className='font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200'
 				>
-					A MERN-Stack Developer & Design Enthusiast
+					A MERN-Stack Developer & Design Enthusiast.
 				</motion.p>
 				<motion.div
 					initial={{ opacity: 0 }}
@@ -69,7 +69,7 @@ const AppBanner = () => {
 						className='font-general-medium flex justify-center items-center w-36 sm:w-48 mt-10 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-500 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-600 hover:text-gray-300 text-white duration-500'
 						aria-label='Download Resume'
 					>
-						<FiArrowDownCircle className='mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100'></FiArrowDownCircle>
+						<FiArrowDownCircle className='mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100' />
 						<span className='text-sm sm:text-lg font-general-medium duration-100'>
 							Download CV
 						</span>
@@ -83,7 +83,7 @@ const AppBanner = () => {
 						duration: 0.9,
 						delay: 0.3,
 					}}
-					className='flex justify-center sm:block mt-10 '
+					className='flex justify-center sm:block mt-10  flex-col '
 				>
 					<h2 className='text-xl font-bold dark:text-white mb-2 border-b-2 border-gray-300'>
 						My-Tech Stack : -
@@ -95,7 +95,12 @@ const AppBanner = () => {
 								loading ? (
 									"loading..."
 								) : (
-									<img key={techImg} src={techImg} alt='' className='w-10 h-10' />
+									<img
+										key={techImg}
+										src={techImg}
+										alt='techLogo'
+										className='w-10 h-10'
+									/>
 								)
 							)}
 					</div>

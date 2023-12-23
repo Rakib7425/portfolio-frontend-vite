@@ -40,7 +40,7 @@ const ProjectSingle = ({ id, title, category, image, loading, hostedLink, gitHub
 					</div>
 				</div>
 			</Link>
-			<div className='flex justify-around pb-4 -mt-8 backdrop-blur-sm'>
+			<div className='flex justify-around pb-4 md:-mt-8 -mt-14 backdrop-blur-sm'>
 				<Link to={gitHubLink} target='_blank' rel='noopener noreferrer'>
 					<Button className='shadow-md bg-yellow-300 border-none dark:bg-gray-400 rounded-md hover:text-pink-600 duration-200'>
 						Repo link

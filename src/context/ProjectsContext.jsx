@@ -21,7 +21,7 @@ export const ProjectsProvider = (props) => {
 	}, []);
 
 	// Search projects by project title
-	const searchProjectsByTitle = projects.filter((item) => {
+	const searchProjectsByTitle = projects?.filter((item) => {
 		const result = item.title.toLowerCase().includes(searchProject.toLowerCase())
 			? item
 			: searchProject === ""
@@ -31,7 +31,7 @@ export const ProjectsProvider = (props) => {
 	});
 
 	// Select projects by project category
-	const selectProjectsByCategory = projects.filter((item) => {
+	const selectProjectsByCategory = projects?.filter((item) => {
 		let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
 		return category.includes(selectProject);
 	});
