@@ -12,7 +12,6 @@ function setupUserEvent(jsx) {
 
 test('modal shows the children and a close button', async () => {
 	const { user } = setupUserEvent(<HireMeModal />);
-
 	expect(
 		screen.getByText(/What project are you looking for?/i)
 	).toBeInTheDocument();
