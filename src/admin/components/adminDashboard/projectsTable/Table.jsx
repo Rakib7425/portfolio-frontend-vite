@@ -81,6 +81,7 @@ const Table = () => {
 						<th>Actions</th>
 					</tr>
 				</thead>
+
 				<tbody className='mt-3'>
 					{data &&
 						data.map((item, index) => (
