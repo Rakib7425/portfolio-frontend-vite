@@ -1,23 +1,25 @@
+import { Link } from "react-router-dom";
+
 function AppFooterCopyright() {
 	return (
-		<div className="font-general-regular flex justify-center items-center text-center">
-			<div className="text-lg text-ternary-dark dark:text-ternary-light">
+		<div className='font-general-regular flex justify-center items-center text-center'>
+			<div className='text-lg text-ternary-dark dark:text-ternary-light'>
 				&copy; {new Date().getFullYear()}
-				<a
-					href="https://github.com/realRakibul/react-tailwindcss-portfolio"
-					target="__blank"
-					className="hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+				<Link
+					to='https://github.com/Rakib7425/react-tailwindcss-portfolio'
+					target='__blank'
+					className='hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500'
 				>
 					React & Tailwind CSS Portfolio
-				</a>
+				</Link>
 				.
-				<a
-					href="https://Rakibul.me"
-					target="__blank"
-					className="text-secondary-dark dark:text-secondary-light font-medium hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+				<Link
+					to='https://www.linkedin.com/in/rakibul-islam-969106259/'
+					target='__blank'
+					className='text-secondary-dark dark:text-secondary-light font-medium hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500'
 				>
 					Rakibul Islam
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

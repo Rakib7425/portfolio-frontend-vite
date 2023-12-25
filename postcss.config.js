@@ -1,4 +1,5 @@
-const tailwindcss = require('tailwindcss');
+/* eslint-disable no-undef */
+const tailwindcss = require("tailwindcss");
 module.exports = {
-	plugins: [tailwindcss('./tailwind.config.js'), require('autoprefixer')],
+	plugins: [tailwindcss("./tailwind.config.js"), require("autoprefixer")],
 };

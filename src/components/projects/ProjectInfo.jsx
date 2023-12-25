@@ -6,6 +6,7 @@ import { SlSocialFacebook } from "react-icons/sl";
 
 import { Link } from "react-router-dom";
 import SharePost from "./SharePost";
+// import { Button } from "antd";
 
 const ProjectInfo = () => {
 	const singleProjectData = useSelector((store) => store.singleProject.singleProject[0]);
@@ -15,7 +16,8 @@ const ProjectInfo = () => {
 				{/* Single project client details */}
 				<div className='mb-7'>
 					<p className='font-general-regular text-2xl font-semibold text-secondary-dark dark:text-secondary-light mb-2'>
-						{/* {singleProjectData.ProjectInfo.ClientHeading} */}About Project
+						{/* {singleProjectData.ProjectInfo.ClientHeading} */}
+						About Project
 					</p>
 					<ul className='leading-loose'>
 						<li className='font-general-regular text-ternary-dark dark:text-ternary-light'>
@@ -24,7 +26,7 @@ const ProjectInfo = () => {
 								to={singleProjectData?.hostedLink}
 								target='_blank'
 								className={
-									"hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 first-letter:cursor-pointer duration-300 underline"
+									"hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 first-letter:cursor-pointer duration-300 underline "
 								}
 							>
 								{singleProjectData?.hostedLink}
@@ -32,6 +34,7 @@ const ProjectInfo = () => {
 						</li>
 						<li className='font-general-regular text-ternary-dark dark:text-ternary-light'>
 							<span>{`GitHub Link`}: </span>
+							{/* <Button className='bg-red-600'> */}
 							<Link
 								target='_blank'
 								to={singleProjectData?.gitHubLink}
@@ -41,6 +44,7 @@ const ProjectInfo = () => {
 							>
 								{singleProjectData?.gitHubLink}
 							</Link>
+							{/* </Button> */}
 						</li>
 					</ul>
 				</div>

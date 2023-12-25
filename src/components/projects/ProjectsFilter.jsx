@@ -1,5 +1,6 @@
 const selectOptions = ["Web Application", "Mobile Application", "UI/UX Design", "Branding"];
 
+// eslint-disable-next-line react/prop-types
 const ProjectsFilter = ({ setSelectProject }) => {
 	return (
 		<select

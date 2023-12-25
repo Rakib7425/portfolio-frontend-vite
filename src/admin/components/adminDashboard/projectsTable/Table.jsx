@@ -25,8 +25,6 @@ const Table = () => {
 
 		getData();
 		// console.log(data);
-
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [needReRender]);
 
 	const handleEditClick = (item) => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { render, screen } from "@testing-library/react";
 import AppBanner from "../components/shared/AppBanner";
 import userEvent from "@testing-library/user-event";

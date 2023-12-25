@@ -51,7 +51,16 @@ const AppBanner = () => {
 					}}
 					className='font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200'
 				>
-					A MERN-Stack Developer & Design Enthusiast.
+					A{" "}
+					<span className='bg-gradient-to-br from-purple-500 to-pink-700 bg-clip-text text-transparent font-semibold'>
+						MERN{" "}
+					</span>
+					-Stack Developer & u/iX
+					<span className='bg-gradient-to-tr from-yellow-300 to-red-500 bg-clip-text text-transparent font-semibold animate-custom duration-200'>
+						{" "}
+						Design Enthusiast
+					</span>
+					<span className='opacity-80 text-yellow-800'>.</span>
 				</motion.p>
 				<motion.div
 					initial={{ opacity: 0 }}

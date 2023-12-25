@@ -12,8 +12,15 @@ const ProjectSingleHeader = () => {
 			<div className='flex'>
 				<div className='flex items-center mr-10'>
 					<FiClock className='text-lg text-ternary-dark dark:text-ternary-light' />
-					<span className='font-general-regular ml-2 leading-none text-primary-dark dark:text-primary-light'>
-						{singleProjectData[0]?.createdAt}
+					<span className='font-general-regular ml-2 leading-none text-primary-dark dark:text-primary-light md:hidden'>
+						{/* method to convert mongoDb createdAt to local date */}
+						{new Date(singleProjectData[0]?.createdAt).toDateString()}
+					</span>
+					<span className='font-general-regular ml-2 leading-none text-primary-dark dark:text-primary-light hidden md:block'>
+						{/* method to convert mongoDb createdAt to local date */}
+						{new Date(singleProjectData[0]?.createdAt).toDateString() +
+							", " +
+							new Date(singleProjectData[0]?.createdAt).toTimeString()}
 					</span>
 				</div>
 				<div className='flex items-center'>

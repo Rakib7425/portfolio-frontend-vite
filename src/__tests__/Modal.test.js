@@ -1,6 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import HireMeModal from '../components/HireMeModal';
+/* eslint-disable no-undef */
+
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import HireMeModal from "../components/HireMeModal";
 
 // Get user event
 function setupUserEvent(jsx) {
@@ -10,11 +12,10 @@ function setupUserEvent(jsx) {
 	};
 }
 
-test('modal shows the children and a close button', async () => {
+test("modal shows the children and a close button", async () => {
+	// eslint-disable-next-line no-unused-vars
 	const { user } = setupUserEvent(<HireMeModal />);
-	expect(
-		screen.getByText(/What project are you looking for?/i)
-	).toBeInTheDocument();
+	expect(screen.getByText(/What project are you looking for ?/i)).toBeInTheDocument();
 
 	const closeModal = screen.getByText(/Close/i);
 	expect(closeModal).toBeInTheDocument();

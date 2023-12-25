@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-
 import Loader from "./Loader";
 
 const ShimmerEffect = () => {
