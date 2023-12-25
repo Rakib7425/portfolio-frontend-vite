@@ -7,18 +7,20 @@ const Admin = () => {
 	const admin = useSelector((store) => store.admin.admin);
 
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1, delay: 1 }}
-			transition={{
-				ease: "easeInOut",
-				duration: 0.6,
-				delay: 0.15,
-			}}
-			className='container mx-auto'
-		>
-			{admin ? <AdminDashboard /> : <AdminLogin />}
-		</motion.div>
+		<div className='min-h-[50vh]'>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1, delay: 1 }}
+				transition={{
+					ease: "easeInOut",
+					duration: 0.6,
+					delay: 0.15,
+				}}
+				className='container mx-auto'
+			>
+				{admin ? <AdminDashboard /> : <AdminLogin />}
+			</motion.div>
+		</div>
 	);
 };
 
