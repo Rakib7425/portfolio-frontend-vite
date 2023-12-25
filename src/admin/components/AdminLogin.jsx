@@ -33,14 +33,15 @@ const AdminLogin = () => {
 		});
 
 		let data = await response.json();
+		// console.log(data);s
 
 		if (data.statusCode === 200) {
 			dispatch(setAdmin(data));
-			toast.success(`${data.message}`);
+			toast.success(`${data?.message}`);
 			setIsLoading(false);
 		} else {
 			dispatch(setAdmin(false));
-			toast.error(`${data.message}`);
+			toast.error(`${data?.message}`);
 			setIsLoading(false);
 		}
 	};

@@ -39,7 +39,7 @@ const AppBanner = () => {
 					}}
 					className='font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light  '
 				>
-					<span>{`Hi, I'm Rakibul Islam`}</span>
+					<span>Hi, I&apos;m Rakibul Islam.</span>
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0 }}
@@ -53,9 +53,9 @@ const AppBanner = () => {
 				>
 					A{" "}
 					<span className='bg-gradient-to-br from-purple-500 to-pink-700 bg-clip-text text-transparent font-semibold'>
-						MERN{" "}
+						MERN
 					</span>
-					-Stack Developer & u/iX
+					-Stack Developer &&nbsp; UI/UX
 					<span className='bg-gradient-to-tr from-yellow-300 to-red-500 bg-clip-text text-transparent font-semibold animate-custom duration-200'>
 						{" "}
 						Design Enthusiast
