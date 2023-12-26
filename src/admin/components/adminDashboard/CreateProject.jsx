@@ -82,7 +82,7 @@ const CreateProject = () => {
 								required
 								type='text'
 								placeholder='Title *'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600"}
 								value={formData.title}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
@@ -100,7 +100,7 @@ const CreateProject = () => {
 								required
 								type='text'
 								placeholder='Hosted link *'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600 "}
 								value={formData.hostedLink}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
@@ -118,7 +118,7 @@ const CreateProject = () => {
 								required
 								type='text'
 								placeholder='GitHub link *'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600"}
 								value={formData.gitHubLink}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
@@ -136,7 +136,7 @@ const CreateProject = () => {
 								required
 								type='text'
 								placeholder='Technologies * (Comma, separated)'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600"}
 								value={formData.technologies}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
@@ -159,7 +159,7 @@ const CreateProject = () => {
 								maxLength={3}
 								type='file'
 								placeholder='Images *'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600"}
 								onChange={handleImageChange}
 							/>
 							<div className='flex' style={{ minHeight: "100px" }}>
@@ -233,7 +233,7 @@ const CreateProject = () => {
 							<textarea
 								rows='6'
 								placeholder='Type Project Description'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600"}
 								value={formData.description}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
@@ -250,7 +250,7 @@ const CreateProject = () => {
 							<textarea
 								rows='6'
 								placeholder='Type Project Challenges'
-								className={reuseClassnames}
+								className={reuseClassnames + "border border-1 border-red-600"}
 								value={formData.challenges}
 								onChange={(e) => {
 									setFormData((prevFormData) => ({
