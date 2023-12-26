@@ -98,7 +98,16 @@ const AppBanner = () => {
 						My-Tech Stack : -
 					</h2>
 
-					<div className='logos flex flex-wrap gap-3 justify-start mt-2'>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{
+							ease: "circInOut",
+							duration: 0.9,
+							delay: 0.1,
+						}}
+						className='logos flex flex-wrap gap-3 justify-start mt-2'
+					>
 						{techStack &&
 							techStack.map((techImg) =>
 								loading ? (
@@ -112,7 +121,7 @@ const AppBanner = () => {
 									/>
 								)
 							)}
-					</div>
+					</motion.div>
 				</motion.div>
 			</div>
 
