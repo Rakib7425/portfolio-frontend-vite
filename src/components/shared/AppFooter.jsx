@@ -1,4 +1,4 @@
-import { FiGithub, FiTwitter, FiLinkedin, FiSlack } from "react-icons/fi";
+import { FiGithub, FiTwitter, FiLinkedin, FiSlack, FiInstagram } from "react-icons/fi";
 import AppFooterCopyright from "./AppFooterCopyright";
 import { Link } from "react-router-dom";
 
@@ -15,11 +15,16 @@ const socialLinks = [
 	},
 	{
 		id: 4,
+		icon: <FiInstagram />,
+		url: "https://www.instagram.com/below_z3r0_",
+	},
+	{
+		id: 5,
 		icon: <FiLinkedin />,
 		url: "https://www.linkedin.com/in/rakibul-islam-969106259/",
 	},
 	{
-		id: 5,
+		id: 6,
 		icon: <FiSlack />,
 		url: "https://app.slack.com/client/T04AL25K0JG/D04D13Q3C56?cdn_fallback=2",
 	},

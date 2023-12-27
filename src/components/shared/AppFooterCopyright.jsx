@@ -10,9 +10,9 @@ function AppFooterCopyright() {
 					target='__blank'
 					className='hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500'
 				>
-					React & Tailwind CSS Portfolio
+					Express, MongoDB, React & Tailwind CSS Portfolio
 				</Link>
-				.
+				. -
 				<Link
 					to='https://www.linkedin.com/in/rakibul-islam-969106259/'
 					target='__blank'
