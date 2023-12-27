@@ -43,7 +43,7 @@ const ContactQueries = () => {
 							{headings.map((heading) => (
 								<th
 									key={heading?.key}
-									className={`bg-gray-200 sticky top-0 border-b border-gray-200 px-6 py-3 text-gray-600 font-bold tracking-wider uppercase text-xs ${heading?.key}`}
+									className={`dark:bg-gray-500 bg-gray-300 sticky top-0 border-b border-gray-200 px-6 py-3 text-black font-bold tracking-wider uppercase text-xs ${heading?.key}`}
 								>
 									{heading?.value}
 								</th>
@@ -51,20 +51,30 @@ const ContactQueries = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{contactQueries.map((contact) => (
-							<tr key={contact?._id} className='text-white'>
-								{headings.map((heading) => (
-									<td
-										key={heading?.key}
-										className={`border-dashed border-t border-gray-200 ${heading?.key}`}
-									>
-										<span className='dark:text-gray-300 text-black px-6 py-3 flex items-center'>
-											{contact[heading?.key]}
-										</span>
-									</td>
-								))}
-							</tr>
-						))}
+						{contactQueries &&
+							contactQueries.map((contact) => (
+								<tr key={contact?._id} className='text-white'>
+									{headings.map((heading) => (
+										<td
+											key={heading?.key}
+											className={`border-dashed border-t border-gray-200 ${heading?.key}`}
+										>
+											{heading?.key === "email" ? (
+												<a
+													href={`mailto:${contact[heading?.key]}`}
+													className='dark:text-blue-500 text-blue-600 px-6 py-3 flex items-center'
+												>
+													{contact[heading?.key]}
+												</a>
+											) : (
+												<span className='dark:text-gray-300 text-black px-6 py-3 flex items-center'>
+													{contact[heading?.key]}
+												</span>
+											)}
+										</td>
+									))}
+								</tr>
+							))}
 					</tbody>
 				</table>
 			</div>

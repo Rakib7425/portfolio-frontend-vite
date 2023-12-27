@@ -104,7 +104,7 @@ const AppBanner = () => {
 						transition={{
 							ease: "circInOut",
 							duration: 0.9,
-							delay: 0.1,
+							delay: 0.3,
 						}}
 						className='logos flex flex-wrap gap-3 justify-start mt-2'
 					>
