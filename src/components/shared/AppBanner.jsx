@@ -128,11 +128,11 @@ const AppBanner = () => {
 			<motion.div
 				initial={{ opacity: 0, y: -180 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
+				transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
 				className='w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0'
 			>
 				<img
-					className='block'
+					className='block animate-pulse'
 					src={activeTheme === "dark" ? developerLight : developerDark}
 					alt='Developer'
 				/>
