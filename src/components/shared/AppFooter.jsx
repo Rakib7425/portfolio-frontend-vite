@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 
 const socialLinks = [
 	{
-		id: 2,
+		id: 1,
 		icon: <FiGithub />,
 		url: "https://github.com/Rakib7425",
 	},
 	{
-		id: 3,
-		icon: <FiTwitter />,
-		url: "https://twitter.com/",
-	},
-	{
-		id: 4,
-		icon: <FiInstagram />,
-		url: "https://www.instagram.com/below_z3r0_",
-	},
-	{
-		id: 5,
+		id: 2,
 		icon: <FiLinkedin />,
 		url: "https://www.linkedin.com/in/rakibul-islam-969106259/",
 	},
 	{
-		id: 6,
+		id: 3,
+		icon: <FiInstagram />,
+		url: "https://www.instagram.com/below_z3r0_",
+	},
+	{
+		id: 4,
+		icon: <FiTwitter />,
+		url: "https://twitter.com/",
+	},
+	{
+		id: 5,
 		icon: <FiSlack />,
 		url: "https://app.slack.com/client/T04AL25K0JG/D04D13Q3C56?cdn_fallback=2",
 	},
