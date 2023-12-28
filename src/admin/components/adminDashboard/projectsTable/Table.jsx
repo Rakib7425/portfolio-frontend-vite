@@ -58,7 +58,7 @@ const Table = () => {
 			transition={{
 				ease: "easeInOut",
 				duration: 0.7,
-				delay: 0.1,
+				delay: 0.11,
 			}}
 		>
 			{editingItem !== null && (
