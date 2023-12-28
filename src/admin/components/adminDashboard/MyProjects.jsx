@@ -10,7 +10,7 @@ const MyProjects = () => {
 			transition={{
 				ease: "easeInOut",
 				duration: 0.7,
-				delay: 0.15,
+				delay: 0.11,
 			}}
 		>
 			<Table />
