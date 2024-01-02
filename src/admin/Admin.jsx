@@ -7,6 +7,7 @@ const Admin = () => {
 	const admin = useSelector((store) => store.admin.admin);
 
 	return (
+		//
 		<div className='min-h-[50vh]'>
 			<motion.div
 				initial={{ opacity: 0 }}
