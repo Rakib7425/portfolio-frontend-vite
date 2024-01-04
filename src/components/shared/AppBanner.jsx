@@ -55,7 +55,7 @@ const AppBanner = () => {
 					<span className='bg-gradient-to-br from-purple-500 to-pink-700 bg-clip-text text-transparent font-semibold'>
 						MERN
 					</span>
-					-Stack Developer &&nbsp; UI/UX
+					-Stack Developer & UI/UX
 					<span className='bg-gradient-to-tr from-yellow-300 to-red-500 bg-clip-text text-transparent font-semibold animate-custom duration-200'>
 						{" "}
 						Design Enthusiast
