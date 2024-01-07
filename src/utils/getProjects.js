@@ -15,8 +15,8 @@ export const getProjects = async (setLoading) => {
 		setLoading(false);
 		return data.data;
 	} catch (error) {
-		console.log(error);
+		console.error(error);
 		setLoading(false);
-		return error;
+		return null;
 	}
 };

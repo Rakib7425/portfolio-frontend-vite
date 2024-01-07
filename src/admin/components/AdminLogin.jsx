@@ -17,6 +17,19 @@ const AdminLogin = () => {
 
 	const handleLogin = async () => {
 		setIsLoading(true);
+
+		if (!formData.identifier || !formData.password) {
+			toast.warn(`username and password is required !`);
+			setIsLoading(false);
+			return;
+		}
+
+		if (formData.identifier.length < 5 || formData.password.length < 5) {
+			toast.warn(`username and password should be greater than 5 characters !`);
+			setIsLoading(false);
+			return;
+		}
+
 		let headersList = {
 			"Content-Type": "application/json",
 		};
@@ -33,7 +46,7 @@ const AdminLogin = () => {
 		});
 
 		let data = await response.json();
-		// console.log(data);s
+		// console.log(data);
 
 		if (data.statusCode === 200) {
 			dispatch(setAdmin(data));

@@ -22,7 +22,7 @@ export const ProjectsProvider = (props) => {
 
 	// Search projects by project title
 	const searchProjectsByTitle = projects?.filter((item) => {
-		const result = item.title.toLowerCase().includes(searchProject.toLowerCase())
+		const result = item.title?.toLowerCase().includes(searchProject?.toLowerCase())
 			? item
 			: searchProject === ""
 			? item
@@ -32,8 +32,12 @@ export const ProjectsProvider = (props) => {
 
 	// Select projects by project category
 	const selectProjectsByCategory = projects?.filter((item) => {
-		let category = item.category.charAt(0).toUpperCase() + item.category.slice(1);
-		return category.includes(selectProject);
+		try {
+			let category = item?.category?.charAt(0)?.toUpperCase() + item?.category?.slice(1);
+			return category?.includes(selectProject);
+		} catch (error) {
+			console.log(error);
+		}
 	});
 
 	return (
