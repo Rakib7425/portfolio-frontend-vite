@@ -1,19 +1,19 @@
 export const hireMeApiUrl = "http://localhost:8080/api/v1/admins/contact"; //   "GET" / "POST"
 export const getProjectsApiUrl =
-	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/getprojects";
+    "https://portfolio-backend-gwo5.onrender.com/api/v1/projects/getprojects";
 export const getProjectByIdApiUrl =
-	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/getproject";
+    "https://portfolio-backend-gwo5.onrender.com/api/v1/projects/getproject";
 export const deleteProjectByIdApiUrl =
-	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/deleteproject?";
+    "https://portfolio-backend-gwo5.onrender.com/api/v1/projects/deleteproject?";
 export const getContactQueriesApiUrl =
-	"https://portfolio-backend-gwo5.onrender.com/api/v1/admins/contact";
+    "https://portfolio-backend-gwo5.onrender.com/api/v1/admins/contact";
 export const addContactQueriesApiUrl = "";
 
-// // Admin api's
+// Admin api's
 export const createProjectApiUrl =
-	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/addproject";
+    "https://portfolio-backend-gwo5.onrender.com/api/v1/projects/addproject";
 export const updateProjectApiUrl =
-	"https://portfolio-backend-gwo5.onrender.com/api/v1/projects/updateproject?id=";
+    "https://portfolio-backend-gwo5.onrender.com/api/v1/projects/updateproject?id=";
 export const deleteProjectApiUrl = "";
 export const contactMeApiUrl = "https://portfolio-backend-gwo5.onrender.com/api/v1/admins/contact"; //   "GET" / "POST"
 export const loginAdminApiUrl = "https://portfolio-backend-gwo5.onrender.com/api/v1/admins/login";
