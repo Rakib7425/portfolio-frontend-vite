@@ -25,6 +25,7 @@ export const updateTechStackApiUrl = "https://portfolio-backend-gwo5.onrender.co
 export const getAboutMeApiUrl = "https://portfolio-backend-gwo5.onrender.com/api/v1/aboutme"; // GET
 
 /** ---------------------------FOR LOCAL SERVER------------------------- */
+
 // export const hireMeApiUrl = "http://localhost:8080/api/v1/admins/contact"; //   "GET" / "POST"
 // export const getProjectsApiUrl = "http://localhost:8080/api/v1/projects/getprojects";
 // export const getProjectByIdApiUrl = "http://localhost:8080/api/v1/projects/getproject";

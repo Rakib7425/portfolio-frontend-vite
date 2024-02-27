@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const ProjectGallery = () => {
 	const singleProject = useSelector((store) => store.singleProject.singleProject);
+
 	console.log(singleProject[0]);
 	return (
 		<div className='grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12 items-center -mb-2'>
